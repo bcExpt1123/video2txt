@@ -1,86 +1,81 @@
-# video2txt
+# 🎬 Video Speech Transcriber
 
-Convert video to text using Python.
+A Python project that extracts speech from a video file and converts it to text using [MoviePy](https://zulko.github.io/moviepy/) and [SpeechRecognition](https://pypi.org/project/SpeechRecognition/).
 
-## Overview
+## 🚀 Features
 
-**video2txt** is a Python-based tool that enables you to extract text from video files. This project automates the process of transcribing spoken content in videos, making it easier to generate subtitles, build searchable archives, or analyze video data.
+- Extracts audio from `.mp4` video files
+- Transcribes speech using Google's Speech Recognition API
+- Modular and clean codebase
+- Uses Poetry for dependency management
+- Automatically deletes temporary audio files after transcription
 
-## Features
+## 📦 Requirements
 
-- Extracts speech from video files and converts it to text
-- Supports a variety of video formats (e.g., mp4, avi, mov)
-- Batch processing of multiple videos
-- Simple command-line interface
-- Easy integration with other Python scripts
+- Python 3.8+
+- `ffmpeg` installed and available in your system PATH
 
-## Installation
+## 🛠️ Setup
 
-1. Clone this repository:
+1. **Clone the repository**
+
    ```bash
    git clone https://github.com/bcExpt1123/video2txt.git
    cd video2txt
    ```
 
-2. (Recommended) Create and activate a virtual environment:
+2. **Install dependencies using Poetry**
+
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   poetry install
    ```
 
-3. Install dependencies:
+3. **Activate the virtual environment**
+
    ```bash
-   pip install -r requirements.txt
+   poetry shell
    ```
 
-## Usage
+4. **Run the script**
 
-### Command Line
+   Place your video file (e.g., `video.mp4`) in the project root and run:
 
-```bash
-python video2txt.py --input <path_to_video> --output <path_to_text>
+   ```bash
+   python video2txt/convert.py
+   ```
+
+## 📂 File Structure
+
+```
+video-speech-transcriber/
+│
+├── video2txt
+│   └──convert.py          # Main script
+├── pyproject.toml         # Poetry project configuration
+├── README.md              # Project documentation
+└── video.mp4              # (Example) video file for transcription
 ```
 
-- `--input`: Path to the video file.
-- `--output`: Path where the resulting text file will be saved.
+## 🧪 Example Output
 
-#### Example
+```
+Transcribing video...
 
-```bash
-python video2txt.py --input sample.mp4 --output transcript.txt
+The resultant text from video is:
+
+Hello, and welcome to the video!
 ```
 
-### As a Python Module
+## 🧼 Notes
 
-```python
-from video2txt import video_to_text
+* Temporary audio files are automatically deleted after transcription.
+* Accuracy depends on the video audio quality and background noise.
+* You must be connected to the internet to use Google's free recognizer API.
 
-transcript = video_to_text("sample.mp4")
-print(transcript)
-```
-
-## Requirements
-
-- Python 3.7+
-- ffmpeg (for audio extraction)
-- Speech-to-text libraries such as SpeechRecognition or OpenAI Whisper (depending on implementation)
-
-## How it Works
-
-1. Extracts audio from the video using ffmpeg.
-2. Processes the audio to recognize and transcribe speech.
-3. Outputs the recognized text to a file or console.
-
-## Contributing
-
-Contributions are welcome! Please open issues and submit pull requests for improvements or bug fixes.
-
-## License
+## 📜 License
 
 This project is licensed under the MIT License.
 
-## Acknowledgements
+## 🤝 Contributions
 
-- [ffmpeg](https://ffmpeg.org/)
-- [SpeechRecognition](https://pypi.org/project/SpeechRecognition/)
-- [OpenAI Whisper](https://github.com/openai/whisper) (optional)
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.

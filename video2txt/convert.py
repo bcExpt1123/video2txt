@@ -1,4 +1,4 @@
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 import speech_recognition as sr
 from pathlib import Path
 

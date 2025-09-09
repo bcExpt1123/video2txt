@@ -14,5 +14,5 @@ if __name__ == "__main__":
     # Transcribe audio
     result = model.transcribe("sound.wav", language="en")
     print("Transcription:", result["text"])
-    with open(f"trans.txt", "w") as file:
+    with open(f"output.trans.txt", "w") as file:
         file.write(result["text"])

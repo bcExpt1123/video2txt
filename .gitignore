@@ -20,3 +20,6 @@
 
 **/*.wav
 **/*.mp4
+**/*.webm
+**/*.avi
+**/*.trans.txt
